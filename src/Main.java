@@ -20,7 +20,7 @@ public class Main {
                 System.out.println("5 - Задание 4.7 (Студент)");
                 System.out.println("6 - Задание 5.6 (Отличник)");
                 System.out.println("0 - Выход");
-
+                System.out.println(">");
 
                 input = scanner.next();
 
@@ -195,7 +195,9 @@ public class Main {
                     //Student student5 = new Student("Максим", null);
                     //System.out.println(student5);
 
+                    System.out.println("Введите оценки Васи(-1 для завершения):");
                     int[] grades1 = readArray(scanner);
+
                     Student student4 = new Student("Вася", grades1);
                     System.out.println(student4);
                     Student student5 = new Student("Максим", null);
@@ -245,8 +247,15 @@ public class Main {
 
         while (true) {
             int val = Validation.readGrade(scanner);
-            if (val == -1) break;
+            if (val == -1) {
+                break;
+            }
             temp[count++] = val;
+        }
+
+        if (count == 0) {
+            System.out.println("Вы не ввели ни одной оценки! Повторите ввод.");
+            return readArray(scanner);
         }
 
         int[] result = new int[count];

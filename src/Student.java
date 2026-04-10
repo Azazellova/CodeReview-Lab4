@@ -64,9 +64,7 @@ public class Student {
     public void setGrades(int[] grades) {
         int errorGrades = Validation.errorInArray(grades);
         if(errorGrades == 0 ) {
-            // FIX_ME: передается ссылка на массив → ломается задание 3.1
-            //this.grades = grades;
-            this.grades = grades.clone();
+            this.grades = grades;
         } else {
             System.out.println("Ошибка в веденном массиве! Массив изменен.");
             this.grades = new int[] {3,4,5,3};
@@ -102,13 +100,13 @@ public class Student {
     //            return "Студент " + name + " " + Arrays.toString(grades);
     //        }
     //    }
-//    public  String toString(){
-//        if (gpa == 5) {
-//            return "У студента " + name + " средний балл: " + gpa + ". Он отличник";
-//        } else {
-//            return "У студента " + name + " средний балл: " + gpa + ". Он не отличник";
-//        }
-//    }
+    //    public  String toString(){
+    //        if (gpa == 5) {
+    //            return "У студента " + name + " средний балл: " + gpa + ". Он отличник";
+    //        } else {
+    //            return "У студента " + name + " средний балл: " + gpa + ". Он не отличник";
+    //        }
+    //    }
 
     //новый код
     @Override
